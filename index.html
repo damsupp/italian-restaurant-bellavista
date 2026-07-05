@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Bella Vista | Authentic Italian Fine Dining Restaurant</title>
+  <meta name="description" content="Experience authentic Italian cuisine at Bella Vista. Enjoy wood-fired oven pizzas, handmade pastas, and curated wine pairings in an elegant, candlelit atmosphere. Book your table today.">
+  <meta name="keywords" content="Italian restaurant, fine dining, reservation, pasta, pizza, wine pairing, Bella Vista">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="#home" class="logo" id="navLogo">
+        <span class="logo-symbol">⚜</span>Bella Vista
+      </a>
+      
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home" class="nav-link active" id="linkHome">Inizio</a></li>
+          <li><a href="#about" class="nav-link" id="linkAbout">La Storia</a></li>
+          <li><a href="#menu" class="nav-link" id="linkMenu">Il Menu</a></li>
+          <li><a href="#booking" class="nav-link" id="linkBooking">Prenotazioni</a></li>
+          <li><a href="#testimonials" class="nav-link" id="linkTestimonials">Recensioni</a></li>
+        </ul>
+      </nav>
+      
+      <div class="nav-actions">
+        <button class="nav-cart-btn" id="openFeastBtn" aria-label="Open Feast Curator">
+          <i class="fa-solid fa-utensils"></i>
+          <span class="nav-cart-count" id="feastCount">0</span>
+        </button>
+        <a href="#booking" class="btn btn-secondary" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;" id="headerReserveBtn">Book Table</a>
+        <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content">
+      <span class="hero-subtitle">Benvenuti a Bella Vista</span>
+      <h1 class="hero-title">Vivi l'Anima dell'Italia</h1>
+      <p class="hero-description">Where traditional family recipes meet modern culinary artistry in a cozy candlelit ambiance. <br><em style="font-family: var(--font-heading); color: var(--primary-gold); font-size: 1.15rem; display: block; margin-top: 15px;">"Mangia bene, ridi spesso, ama molto" &mdash; Eat well, laugh often, love much.</em></p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-primary" id="heroExploreBtn">Scopri il Menu</a>
+        <a href="#booking" class="btn btn-secondary" id="heroBookBtn">Prenota un Tavolo</a>
+      </div>
+    </div>
+    
+    <div class="hero-scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ABOUT & STORY SECTION
+       ========================================================================== -->
+  <section class="section-padding reveal" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="section-subtitle">La Nostra Storia (Our Heritage)</span>
+          <h2 class="section-title">Tradizione e Passione</h2>
+          <div class="title-line" style="margin-left: 0;"></div>
+          <p>Founded by the Rossi family, Bella Vista brings the warm, comforting essence of classic Italian dining to life. <br><em style="color: var(--primary-gold);">"L'appetito vien mangiando" (Appetite comes with eating)</em> &mdash; Our culinary philosophy centers on simplicity, using fresh ingredients sourced directly from local organic farms and artisanal producers in Italy.</p>
+          <p>Every pasta strand is hand-rolled daily, and every sauce is simmered for hours under the careful supervision of Chef Giuseppe Rossi. <br><em style="color: var(--primary-gold);">"Cucinare è un atto d'amore" (Cooking is an act of love)</em> &mdash; We believe that dining is an art of gathering, sharing, and creating timeless memories.</p>
+          
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-num" id="statYears">1994</span>
+              <span class="highlight-label">Anno di Fondazione (Est.)</span>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-num" id="statIngredients">100%</span>
+              <span class="highlight-label">Ingredienti Naturali</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-image-wrapper">
+          <img src="assets/chef_story.png" alt="Chef Giuseppe Rossi kneading fresh pasta dough" class="about-img" id="aboutImg">
+          <div class="about-badge">
+            <span id="badgeTextYear">30+</span>
+            <span>Anni di Esperienza</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE MENU SECTION
+       ========================================================================== -->
+  <section class="section-padding reveal" id="menu" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-subtitle">Il Viaggio Gastronomico (Gastronomic Journey)</span>
+        <h2 class="section-title">Il Nostro Menu</h2>
+        <div class="title-line"></div>
+      </div>
+      
+      <!-- Category Filter Controls -->
+      <div class="menu-controls">
+        <button class="menu-filter-btn active" data-category="all" id="btnFilterAll">Tutti i Piatti</button>
+        <button class="menu-filter-btn" data-category="antipasti" id="btnFilterAntipasti">Antipasti Sfiziosi</button>
+        <button class="menu-filter-btn" data-category="primi" id="btnFilterPrimi">Primi Piatti (Pasta)</button>
+        <button class="menu-filter-btn" data-category="secondi" id="btnFilterSecondi">Secondi (Mains)</button>
+        <button class="menu-filter-btn" data-category="dolci" id="btnFilterDolci">Dolci Tentazioni</button>
+      </div>
+      
+      <!-- Dishes Grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Antipasti 1 -->
+        <div class="menu-item glass-card" data-category="antipasti" id="itemBruschetta">
+          <div class="menu-item-image">
+            <img src="assets/antipasti_bruschetta.png" alt="Platter of Tomato Bruschetta">
+            <span class="menu-item-badge">Chef's Special</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Bruschetta al Pomodoro</h3>
+              <span class="menu-item-price">$14</span>
+            </div>
+            <p class="menu-item-desc">Grilled sourdough rubbed with garlic, topped with heirloom tomatoes, fresh basil, and aged balsamic glaze.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Pinot Grigio</span>
+              </div>
+              <button class="menu-add-btn" data-id="1" data-name="Bruschetta al Pomodoro" data-price="14" data-img="assets/antipasti_bruschetta.png" data-wine="Pinot Grigio" aria-label="Add Bruschetta to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Antipasti 2 -->
+        <div class="menu-item glass-card" data-category="antipasti" id="itemCalamari">
+          <div class="menu-item-image">
+            <img src="assets/antipasti_bruschetta.png" alt="Crispy Fried Calamari Platter" style="filter: hue-rotate(15deg) brightness(0.9);">
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Calamari Fritti con Limone</h3>
+              <span class="menu-item-price">$16</span>
+            </div>
+            <p class="menu-item-desc">Crispy golden fried calamari rings served with charred lemon slices and a zesty garlic herb aioli.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Vermentino</span>
+              </div>
+              <button class="menu-add-btn" data-id="5" data-name="Calamari Fritti" data-price="16" data-img="assets/antipasti_bruschetta.png" data-wine="Vermentino" aria-label="Add Calamari to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primi 1 -->
+        <div class="menu-item glass-card" data-category="primi" id="itemTagliatelle">
+          <div class="menu-item-image">
+            <img src="assets/primi_tagliatelle.png" alt="Tagliatelle with Truffles">
+            <span class="menu-item-badge">Signature</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Tagliatelle al Tartufo</h3>
+              <span class="menu-item-price">$28</span>
+            </div>
+            <p class="menu-item-desc">House-made egg tagliatelle tossed in a rich butter sauce with shaved black truffles, forest mushrooms, and Pecorino Romano.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Barolo</span>
+              </div>
+              <button class="menu-add-btn" data-id="2" data-name="Tagliatelle al Tartufo" data-price="28" data-img="assets/primi_tagliatelle.png" data-wine="Barolo" aria-label="Add Tagliatelle to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Primi 2 -->
+        <div class="menu-item glass-card" data-category="primi" id="itemRisotto">
+          <div class="menu-item-image">
+            <img src="assets/primi_tagliatelle.png" alt="Creamy Mushroom Risotto Plate" style="filter: saturate(0.85) contrast(1.1);">
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Risotto ai Funghi Porcini</h3>
+              <span class="menu-item-price">$26</span>
+            </div>
+            <p class="menu-item-desc">Creamy Italian Arborio rice cooked slow with wild porcini mushrooms, parmigiano, and a drizzle of white truffle oil.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Nebbiolo</span>
+              </div>
+              <button class="menu-add-btn" data-id="6" data-name="Risotto ai Funghi" data-price="26" data-img="assets/primi_tagliatelle.png" data-wine="Nebbiolo" aria-label="Add Risotto to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondi 1 -->
+        <div class="menu-item glass-card" data-category="secondi" id="itemSalmon">
+          <div class="menu-item-image">
+            <img src="assets/secondi_salmon.png" alt="Pan-Seared Salmon">
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Salmone al Limone</h3>
+              <span class="menu-item-price">$34</span>
+            </div>
+            <p class="menu-item-desc">Pan-seared salmon fillet over buttered asparagus, finished with a bright lemon caper butter sauce and fresh dill.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Chardonnay</span>
+              </div>
+              <button class="menu-add-btn" data-id="3" data-name="Salmone al Limone" data-price="34" data-img="assets/secondi_salmon.png" data-wine="Chardonnay" aria-label="Add Salmon to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondi 2 -->
+        <div class="menu-item glass-card" data-category="secondi" id="itemSteak">
+          <div class="menu-item-image">
+            <img src="assets/hero_background.png" alt="Bistecca alla Fiorentina T-Bone steak" style="object-position: center bottom;">
+            <span class="menu-item-badge">Luxury Cut</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Bistecca alla Fiorentina</h3>
+              <span class="menu-item-price">$48</span>
+            </div>
+            <p class="menu-item-desc">Dry-aged Florence-style ribeye steak grilled rare, seasoned with sea salt and infused with premium rosemary-oil.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Chianti Classico</span>
+              </div>
+              <button class="menu-add-btn" data-id="7" data-name="Bistecca alla Fiorentina" data-price="48" data-img="assets/hero_background.png" data-wine="Chianti Classico" aria-label="Add Steak to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dolci 1 -->
+        <div class="menu-item glass-card" data-category="dolci" id="itemTiramisu">
+          <div class="menu-item-image">
+            <img src="assets/dolci_tiramisu.png" alt="Classic Tiramisu Dessert">
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Tiramisu Classico</h3>
+              <span class="menu-item-price">$12</span>
+            </div>
+            <p class="menu-item-desc">Layers of espresso-soaked savoiardi ladyfingers and whipped mascarpone cream, finished with a heavy dusting of cocoa.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Vin Santo</span>
+              </div>
+              <button class="menu-add-btn" data-id="4" data-name="Tiramisu Classico" data-price="12" data-img="assets/dolci_tiramisu.png" data-wine="Vin Santo" aria-label="Add Tiramisu to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dolci 2 -->
+        <div class="menu-item glass-card" data-category="dolci" id="itemCannoli">
+          <div class="menu-item-image">
+            <img src="assets/dolci_tiramisu.png" alt="Sicilian Cannoli Desserts" style="filter: hue-rotate(50deg) saturate(1.2);">
+            <span class="menu-item-badge">New</span>
+          </div>
+          <div class="menu-item-info">
+            <div class="menu-item-header">
+              <h3 class="menu-item-title">Cannoli Siciliani</h3>
+              <span class="menu-item-price">$10</span>
+            </div>
+            <p class="menu-item-desc">Crunchy fried pastry shells stuffed with sweet sheep-milk ricotta cream, chocolate chips, and chopped pistachios.</p>
+            <div class="menu-item-footer">
+              <div class="menu-item-pairing">
+                <i class="fa-solid fa-wine-glass"></i> Pair: <span>Moscato d'Asti</span>
+              </div>
+              <button class="menu-add-btn" data-id="8" data-name="Cannoli Siciliani" data-price="10" data-img="assets/dolci_tiramisu.png" data-wine="Moscato d'Asti" aria-label="Add Cannoli to Feast">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FEAST CURATOR SIDE PANEL
+       ========================================================================== -->
+  <aside class="feast-sidebar" id="feastSidebar" role="dialog" aria-modal="true" aria-label="Feast Curator Panel">
+    <div class="feast-header">
+      <h2 style="font-family: var(--font-body); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">
+        <i class="fa-solid fa-utensils text-gold" style="margin-right: 8px;"></i>Curate Your Feast
+      </h2>
+      <button class="feast-close-btn" id="closeFeastBtn" aria-label="Close panel"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    
+    <div class="feast-content" id="feastContent">
+      <!-- Injected by JavaScript when empty or populated -->
+      <div class="feast-empty-message" id="feastEmptyMessage">
+        <div class="feast-empty-icon"><i class="fa-solid fa-cookie-bite"></i></div>
+        <p>Your dining list is empty.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Add dishes from the menu to build your custom feast.</p>
+      </div>
+      
+      <div class="feast-items-container" id="feastItemsContainer"></div>
+      
+      <!-- Live Dynamic Wine Recommendation Box -->
+      <div class="feast-wine-suggestions" id="feastWineBox">
+        <div class="wine-sugg-title">
+          <i class="fa-solid fa-wine-bottle"></i> Sommelier Recommendation
+        </div>
+        <p class="wine-sugg-desc" id="wineSuggText">Add items to receive dynamic wine pairing choices.</p>
+      </div>
+    </div>
+    
+    <div class="feast-footer">
+      <div class="feast-total-row">
+        <span>Subtotal</span>
+        <span class="feast-total-price" id="feastSubtotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%;" id="feastReserveBtn">Reserve Dinner With This Feast</button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       INTERACTIVE TABLE RESERVATION
+       ========================================================================== -->
+  <section class="section-padding booking-bg reveal" id="booking">
+    <div class="container">
+      <div class="booking-wrapper glass-card">
+        <div class="text-center" style="margin-bottom: 3rem;">
+          <span class="section-subtitle">Riserva un Tavolo (Reserve a Table)</span>
+          <h2 class="section-title" style="margin-bottom: 0;">Prenotazioni</h2>
+          <div class="title-line"></div>
+          <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">Select your preferred dining environment and date to guarantee a memorable sensory experience. <br><em style="color: var(--primary-gold);">"Non si pensa bene, non si ama bene, se non si ha cenato bene." &mdash; One cannot think well, love well, if one has not dined well.</em></p>
+        </div>
+        
+        <form class="booking-form" id="bookingForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="bookName">Full Name</label>
+            <input type="text" id="bookName" class="form-input" placeholder="e.g. Giuseppe Rossi" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="bookEmail">Email Address</label>
+            <input type="email" id="bookEmail" class="form-input" placeholder="e.g. giuseppe@rossi.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="bookGuests">Party Size</label>
+            <select id="bookGuests" class="form-input" required>
+              <option value="" disabled selected>Number of Guests</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests (Couple)</option>
+              <option value="4">4 Guests</option>
+              <option value="6">6 Guests (Group)</option>
+              <option value="8">8+ Guests (Event)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="bookDate">Select Date</label>
+            <input type="date" id="bookDate" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="bookTime">Preferred Time</label>
+            <select id="bookTime" class="form-input" required>
+              <option value="" disabled selected>Select Hour</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="18:30">6:30 PM (Sunset)</option>
+              <option value="20:00">8:00 PM (Candlelit)</option>
+              <option value="21:30">9:30 PM (Late Dining)</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="bookPhone">Phone Number</label>
+            <input type="tel" id="bookPhone" class="form-input" placeholder="e.g. +1 555 123 4567" required>
+          </div>
+          
+          <!-- Seating Area Picker -->
+          <div class="form-group form-group-full">
+            <label class="form-label">Scegli la Zona (Dining Area Preference)</label>
+            <div class="zone-picker" id="zonePicker">
+              <div class="zone-option selected" data-zone="Main Hall" id="zoneMain">
+                <span class="zone-name">Sala Principale (Main Hall)</span>
+                <span class="zone-desc">Candlelit & majestic acoustic music</span>
+              </div>
+              <div class="zone-option" data-zone="Garden Patio" id="zoneGarden">
+                <span class="zone-name">Il Giardino (Garden Patio)</span>
+                <span class="zone-desc">Lush greens & open starry sky</span>
+              </div>
+              <div class="zone-option" data-zone="Chef's Table" id="zoneChefs">
+                <span class="zone-name">Tavolo dello Chef (Chef's Table)</span>
+                <span class="zone-desc">Front row view of the wood fire kiln</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="form-group form-group-full">
+            <label class="form-label" for="bookNotes">Special Notes</label>
+            <textarea id="bookNotes" class="form-input" placeholder="Allergies, anniversaries, or dietary preferences..." style="height: 100px; resize: none;"></textarea>
+          </div>
+          
+          <div class="form-group form-group-full">
+            <button type="submit" class="btn btn-primary booking-submit-btn" id="bookSubmitBtn">Confirm Reservation</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success confirmation ticket Modal -->
+  <div class="booking-success-modal" id="successModal">
+    <div class="success-card glass-card">
+      <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+      <h3 class="success-title">Tavolo Riservato!</h3>
+      <p class="success-text" id="successMessage">Your reservation at Bella Vista has been confirmed. A confirmation ticket details was sent to your email.</p>
+      
+      <!-- Virtual Ticket summary -->
+      <div style="background-color: var(--bg-primary); padding: 1.5rem; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); text-align: left; margin-bottom: 2rem; font-size: 0.9rem;">
+        <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.8rem; margin-bottom: 0.8rem;">
+          <span style="font-weight: 700; color: var(--primary-gold);">Ticket Confirmation</span>
+          <span id="ticketCode" style="font-family: monospace; font-weight: 700;">#BV-9812</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; color: var(--text-muted);">
+          <div>Guests: <strong id="ticketGuests" style="color: var(--text-main);">4 Guests</strong></div>
+          <div>Date: <strong id="ticketDate" style="color: var(--text-main);">July 18, 2026</strong></div>
+          <div>Time: <strong id="ticketTime" style="color: var(--text-main);">8:00 PM</strong></div>
+          <div>Dining Hall: <strong id="ticketZone" style="color: var(--text-main);">Chef's Table</strong></div>
+          <div id="ticketFeastRow" style="display: none;">Curated Feast: <strong id="ticketFeastCount" style="color: var(--primary-gold);">3 items added</strong></div>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary" id="closeSuccessBtn">Wonderful</button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       TESTIMONIALS SECTION
+       ========================================================================== -->
+  <section class="section-padding reveal" id="testimonials" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-subtitle">Le Voci dei Nostri Ospiti (Client Reviews)</span>
+        <h2 class="section-title">Esperienze Indimenticabili</h2>
+        <div class="title-line"></div>
+      </div>
+      
+      <div class="testimonials-carousel" id="carousel">
+        <div class="testimonial-track" id="carouselTrack">
+          <!-- Slide 1 -->
+          <div class="testimonial-slide">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">"The truffle tagliatelle is absolute heaven. It transported me straight to Florence. Combined with the candlelit atmosphere, it was the perfect anniversary dinner."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Eleanor Vance</span>
+              <span class="author-title">Food Enthusiast</span>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="testimonial-slide">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">"From the warm greeting at the door to the custom wine pairing suggestion during the meal, the hospitality is unmatched. Absolutely outstanding!"</p>
+            <div class="testimonial-author">
+              <span class="author-name">Marcus Sterling</span>
+              <span class="author-title">Wine Sommelier</span>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="testimonial-slide">
+            <div class="quote-icon">“</div>
+            <p class="testimonial-text">"The outdoor patio has this cozy rustic Italian village vibe. Sipping Vin Santo and enjoying fresh tiramisu under the stars is pure magic."</p>
+            <div class="testimonial-author">
+              <span class="author-name">Sophia Moretti</span>
+              <span class="author-title">Travel Writer</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="carousel-nav" id="carouselNav">
+          <div class="carousel-dot active" data-slide="0"></div>
+          <div class="carousel-dot" data-slide="1"></div>
+          <div class="carousel-dot" data-slide="2"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#home" class="logo" style="margin-bottom: 0.5rem;"><span class="logo-symbol">⚜</span>Bella Vista</a>
+          <p>An exquisite sensory culinary trip through Italy's finest regions. Authenticity, passion, and flavor unified under one candlelit setting.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Tripadvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Orari di Apertura</h3>
+          <ul class="footer-links" style="pointer-events: none;">
+            <li>Monday - Friday: 5:00 PM - 11:00 PM</li>
+            <li>Saturday - Sunday: 12:00 PM - 11:30 PM</li>
+            <li>*Kitchen closes 30 mins before closing</li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">Dove Siamo</h3>
+          <p>742 Via della Rosetta, <br>Suite 100, Florence District</p>
+          <p>Email: Ciao@bellavista-dining.com<br>Phone: +1 555 982 3812</p>
+        </div>
+        
+        <div class="footer-col">
+          <h3 class="footer-title">La Gazzetta di Bella Vista</h3>
+          <p>Subscribe to receive news, cooking masterclass updates, and seasonal tasting alerts.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Grazie! You have subscribed to our newsletter.'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your Email Address" required aria-label="Newsletter email">
+            <button type="submit" class="newsletter-btn"><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Bella Vista Dining Group. All rights reserved. Crafted with authentic passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
